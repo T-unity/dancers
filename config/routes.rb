@@ -4,5 +4,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'top#index'
+
+  # トップコントローラー
   get :about, to: 'top#about', as: 'about'
+  get :test,  to: 'top#test',  as: 'test'
 end
