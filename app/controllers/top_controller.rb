@@ -11,5 +11,6 @@ class TopController < ApplicationController
   # テスト
   def test
     render plain: request
+    # p request
   end
 end
