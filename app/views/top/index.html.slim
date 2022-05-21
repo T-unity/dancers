@@ -22,3 +22,14 @@ br/
 - something = %W('1!"&$%1 2\||!```'$2 3nrausdf3)
 = something
 br/
+
+- taro = 'Taro'
+- jiro = 'Jiro'
+
+- if taro == jiro
+  p 太郎は次郎である
+- else
+  p 太郎は次郎ではない
+/ - end
+/ slimテンプレートを使用する場合は、明示的なendは不要。
+/ endをつけるとエラーがでる。 # Temple::FilterError in Top#index
