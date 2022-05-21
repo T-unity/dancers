@@ -33,3 +33,10 @@ br/
 / - end
 / slimテンプレートを使用する場合は、明示的なendは不要。
 / endをつけるとエラーがでる。 # Temple::FilterError in Top#index
+
+
+/ 以下の記法はslimでは出力されない？
+/ - if true then puts 'trueです'
+/ - if taro != jiro then puts '2つの値は等しくない'
+/ = if true then puts 'trueです'
+/ = if taro != jiro then puts '2つの値は等しくない'
