@@ -7,6 +7,8 @@ class TopController < ApplicationController
   # アバウトページ
   def about
     render plain: flash[:notice]
+    # render plain: flash
+    # p flash[:notice]
   end
 
   # テスト
