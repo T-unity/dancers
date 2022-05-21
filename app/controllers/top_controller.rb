@@ -6,11 +6,15 @@ class TopController < ApplicationController
 
   # アバウトページ
   def about
+    render plain: flash[:notice]
   end
 
   # テスト
   def test
-    render plain: request
+    # render plain: request
     # p request
+
+    flash[:notice] = 'フラッシュを使ってリダイレクト'
+    redirect_to action: 'about'
   end
 end
