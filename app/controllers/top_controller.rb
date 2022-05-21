@@ -2,6 +2,7 @@ class TopController < ApplicationController
 
   # トップページ
   def index
+    @text = 'テストテキスト'
   end
 
   # アバウトページ
