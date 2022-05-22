@@ -8,7 +8,8 @@ class TopController < ApplicationController
     # リクエストオブジェクトが使えるメソッド
     # https://railsdoc.com/page/request
     # render plain: request.authority
-    @attack = "<script>window.alert('アラートの表示')</script>"
+    # @attack = "<script>window.alert('アラートの表示')</script>"
+    @hypertext = "<b>大文字で出力</b>"
   end
 
   # アバウトページ
