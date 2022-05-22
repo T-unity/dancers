@@ -4,7 +4,11 @@ class TopController < ApplicationController
   def index
     # @text = 'テストテキスト'
     # @ret = some_function(1,2)
-    render plain: params
+    # render plain: params
+    # リクエストオブジェクトが使えるメソッド
+    # https://railsdoc.com/page/request
+    # render plain: request.authority
+    @attack = "<script>window.alert('アラートの表示')</script>"
   end
 
   # アバウトページ
