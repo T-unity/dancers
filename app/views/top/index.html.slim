@@ -9,24 +9,12 @@ h1 slimのテスト中
 / あんまりない例かと思うが、コントローラでHTMLを変数に格納してビューに渡す場合はこれでOK。
 == @hypertext
 
+/ https://railsdoc.com/page/link_to
 / link_toを使うと簡単にaタグを作成できる
-= link_to 'about', '/about'
+= link_to 'aboutへ移動', '/about', class: 'menu'
 
-/ - condition1 = true
-/ - condition2 = true
-/ - condition3 = false
-/ - condition4 = false
-
-/ - if condition1 && condition2
-/   p 通過
-
-
-/ - if condition1 && condition3
-/   p 評価されない
-
-/ - if (condition1 == condition2) && (condition3 == condition4)
-/   p 評価される
-
+- 5.times do |i|
+  p = i # この書き方pにiを代入してるみたいで結構可読性低い。
 
 / フォームの作成
 / https://railsguides.jp/form_helpers.html
