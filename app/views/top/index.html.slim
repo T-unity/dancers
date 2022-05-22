@@ -1,12 +1,5 @@
 h1 slimのテスト中
 
-/ = @text
-/ = @ret
-/ = @attack
-/ ==で出力するとスクリプトをエスケープしない
-/ == @attack
-
-/ あんまりない例かと思うが、コントローラでHTMLを変数に格納してビューに渡す場合はこれでOK。
 == @hypertext
 
 / https://railsdoc.com/page/link_to
@@ -18,18 +11,3 @@ h1 slimのテスト中
   / この書き方pにiを代入してるみたいで結構可読性低い。
 
 = @prod
-
-/ フォームの作成
-/ https://railsguides.jp/form_helpers.html
-/ = form_with url: '/serch', method: :get do |form|
-/   / ネストの深さはこれが正しいみたい。インデント無しだとエラー発生する。NameError in Top#index
-/   = form.label :query, "Search for:"
-/   = form.text_field :query
-/   = form.submit 'search'
-
-/ 上記の記述で以下のHTMLが生成される。
-/ <form action="/serch" accept-charset="UTF-8" method="get">
-/   <label for="query">Search for:</label>
-/   <input type="text" name="query" id="query">
-/   <input type="submit" name="commit" value="search" data-disable-with="search">
-/ </form>
