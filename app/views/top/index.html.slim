@@ -3,11 +3,14 @@ h1 slimのテスト中
 / = @text
 / = @ret
 / = @attack
-/ ==で出力するとHTMLをエスケープしない
+/ ==で出力するとスクリプトをエスケープしない
 / == @attack
 
 / あんまりない例かと思うが、コントローラでHTMLを変数に格納してビューに渡す場合はこれでOK。
 == @hypertext
+
+/ link_toを使うと簡単にaタグを作成できる
+= link_to 'about', '/about'
 
 / - condition1 = true
 / - condition2 = true
