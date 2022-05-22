@@ -10,6 +10,7 @@ class TopController < ApplicationController
     # render plain: request.authority
     # @attack = "<script>window.alert('アラートの表示')</script>"
     @hypertext = "<b>大文字で出力</b>"
+    @prod = 5
   end
 
   # アバウトページ
