@@ -1,4 +1,8 @@
-class TopController < ApplicationController
+# class TopController < ApplicationController
+class Public::TopController < ApplicationController
+# ディレクトリ構造を変えたため、::で名前空間を設定
+# https://qiita.com/hatorijobs/items/87a2bd93f8666d77d711
+# /controllersと/viewsからの相対パスでrailsがよしなに判断してくれるので、それ以下のpathを一致させるようにしておく。
 
   # トップページ
   def index

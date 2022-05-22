@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root 'top#index'
 
   # トップコントローラー
-  get :about, to: 'top#about', as: 'about'
-  get :test,  to: 'top#test',  as: 'test'
+  get :about, to: 'public/top#about', as: 'about'
+  get :test,  to: 'public/top#test',  as: 'test'
 end
