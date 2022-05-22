@@ -1,9 +1,13 @@
+<%# このerbがデフォルトテンプレート %>
+<%# このHTMLのBodyのyield部分にslimのHTMLが入る %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title><%= page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%# CSRF %>
     <%= csrf_meta_tags %>
+    <%# コンテンツセキュリティポリシーのタグ。初期状態では使用しない。 %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>

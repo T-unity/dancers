@@ -15,6 +15,10 @@ class TopController < ApplicationController
 
   # アバウトページ
   def about
+    # ページのタイトルを定義
+    @page_title = '概要'
+    # なぜかテンプレートで定義すると読み込めないので調査が必要。
+
     # render plain: flash[:notice]
     # render plain: flash
     # p flash[:notice]
