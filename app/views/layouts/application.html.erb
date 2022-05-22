@@ -3,17 +3,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# 各ページ毎にページタイトルを取得 %>
     <title><%= page_title %></title>
+    <%# この記述いらない気が。。。 %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%# CSRF %>
     <%= csrf_meta_tags %>
     <%# コンテンツセキュリティポリシーのタグ。初期状態では使用しない。 %>
     <%= csp_meta_tag %>
-
+    <%# スタイルシートの取得 %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <%# メインの出力 %>
+    <main>
+      <%= yield %>
+    </main>
+    
   </body>
 </html>
