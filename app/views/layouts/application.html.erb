@@ -17,10 +17,15 @@
 
   <body>
 
+    <%# ヘッダー %>
+    <header>
+      <%= render "common/header" %>
+    </header>
+
     <%# メインの出力 %>
     <main>
       <%= yield %>
     </main>
-    
+
   </body>
 </html>
