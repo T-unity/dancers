@@ -1,1 +1,6 @@
-<h1>about page</h1>
+<h1>色々やってみるページ</h1>
+
+= form_with url: '/about', method: :post do |form|
+  = form.label :piyopiyo, "検索:"
+  = form.text_field :piyopiyo
+  = form.submit 'search'

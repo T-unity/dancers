@@ -21,11 +21,11 @@ h1 slimのテスト中
 
 / フォームの作成
 / https://railsguides.jp/form_helpers.html
-= form_with url: '/serch', method: :get do |form|
-  / ネストの深さはこれが正しいみたい。インデント無しだとエラー発生する。NameError in Top#index
-  = form.label :query, "Search for:"
-  = form.text_field :query
-  = form.submit 'search'
+/ = form_with url: '/serch', method: :get do |form|
+/   / ネストの深さはこれが正しいみたい。インデント無しだとエラー発生する。NameError in Top#index
+/   = form.label :query, "Search for:"
+/   = form.text_field :query
+/   = form.submit 'search'
 
 / 上記の記述で以下のHTMLが生成される。
 / <form action="/serch" accept-charset="UTF-8" method="get">

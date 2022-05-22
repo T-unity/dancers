@@ -3,12 +3,13 @@ class TopController < ApplicationController
   # トップページ
   def index
     # @text = 'テストテキスト'
-    @ret = some_function(1,2)
+    # @ret = some_function(1,2)
+    render plain: params
   end
 
   # アバウトページ
   def about
-    render plain: flash[:notice]
+    # render plain: flash[:notice]
     # render plain: flash
     # p flash[:notice]
   end
@@ -18,8 +19,8 @@ class TopController < ApplicationController
     # render plain: request
     # p request
 
-    flash[:notice] = 'フラッシュを使ってリダイレクト'
-    redirect_to action: 'about'
+    # flash[:notice] = 'フラッシュを使ってリダイレクト'
+    # redirect_to action: 'about'
   end
 
   # お試しメソッド
