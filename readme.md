@@ -30,3 +30,9 @@ https://github.com/T-unity/rails-da/commit/e1b0b724686282cfa1288cf3baa0b2cd70573
 書き方は以下を参照
 
 https://github.com/slim-template/slim/blob/master/README.jp.md
+
+## gemを追加したい時。
+
+  1. 追加したいgemをGemfileに記述する。
+  1. webコンテナに入ってbundle installする。
+  1. コンテナを再ビルド（`docker-compose build`）
