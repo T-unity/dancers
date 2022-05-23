@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'public/top#index'
 
-  # トップコントローラー
+  # トップコントローラー。静的なコンテンツのみ。
   get :about, to: 'public/top#about', as: 'about'
   get :test,  to: 'public/top#test',  as: 'test'
 end

@@ -36,3 +36,13 @@ https://github.com/slim-template/slim/blob/master/README.jp.md
   1. 追加したいgemをGemfileに記述する。
   1. webコンテナに入ってbundle installする。
   1. コンテナを再ビルド（`docker-compose build`）
+
+## Doc
+
+ - アクティブレコードについて
+
+ https://railsguides.jp/active_record_basics.html
+
+ - Active Record マイグレーション
+
+https://railsguides.jp/active_record_migrations.html
