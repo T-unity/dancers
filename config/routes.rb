@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   # トップコントローラー。静的なコンテンツのみ。
   get :about, to: 'public/top#about', as: 'about'
   get :test,  to: 'public/top#test',  as: 'test'
+
+  resources :posts
 end
