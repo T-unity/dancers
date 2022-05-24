@@ -1,3 +1,8 @@
+/ この画面は全ユーザーが閲覧できてOK
+/ ユーザー毎の設定で、「ログインユーザーにしか投稿を表示する」の設定をONにしている場合、一覧表示にマスクをかける。
 
-- @posts.each do |post|
-  = post.content 
+- if @posts.present?
+  - @posts.each do |post|
+    = post.content
+- else
+  p ここには何もありません。
