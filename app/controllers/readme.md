@@ -1,7 +1,7 @@
-class PostsController < ApplicationController
+7つのアクションを持つコントローラを作成した際は以下をコピペ。
 
+```
   def index
-    @posts = Post.all
   end
 
   def new
@@ -21,5 +21,4 @@ class PostsController < ApplicationController
 
   def destroy
   end
-
-end
+```
