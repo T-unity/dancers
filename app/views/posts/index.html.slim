@@ -4,6 +4,9 @@
 - if @posts.present?
   - @posts.each do |post|
     / = link_to post.content, post_path
+    / 何のアクションでリンクを生成するのか明示する必要がある。
     = link_to post.content, post_path(post)
+    <br>
+    = link_to '更新', edit_post_path(post)
 - else
   p ここには何もありません。

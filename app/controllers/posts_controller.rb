@@ -7,6 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
+    @new_post = Post.new
+  end
+
+  def create
+    # Post.create(post_params)
+    # redirect_to(posts_path)
   end
 
   def show
@@ -16,9 +22,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-  end
-
-  def create
+    # ORMのfindメソッド確認
+    # paramsの中身ダンプして確認
+    @edit_post = Post.find(params[:id])
   end
 
   def update
@@ -26,5 +32,12 @@ class PostsController < ApplicationController
 
   def destroy
   end
+
+  # private
+  #   def post_params
+  #     params.require(:post).permit(
+  #       :content,
+  #     )
+  #   end
 
 end
