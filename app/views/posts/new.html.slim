@@ -1,9 +1,0 @@
-/ form_with
-/ https://railsdoc.com/page/form_with
-
-/ ブロックの中はActionView::Helpers::Formbuilderクラスのオブジェクトが入ってるぽい。
-/ = form_with(model: @post,local: true) do |form|
-= form_with(model: @post,url: posts_path,local: true) do |form|
-  p コンテンツ
-  = form.text_field :content
-  = form.submit '送信'
