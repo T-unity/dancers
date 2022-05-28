@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # root 'public/top#index'
+  namespace :public do
+    # get 'tops/top'
+  end
+  root 'public/tops#top'
 end
