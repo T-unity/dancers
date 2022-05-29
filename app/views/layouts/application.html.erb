@@ -4,7 +4,8 @@
 <html>
   <head>
     <%# 各ページ毎にページタイトルを取得 %>
-    <title><%= browser_tab_text %></title>
+    <%# https://railstutorial.jp/chapters/rails_flavored_ruby?version=5.1#code-application_layout_full_title %>
+    <title><%= browser_tab_text( yield(:title) ) %></title>
     <%# この記述いらない気が。。。 %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%# CSRF %>
