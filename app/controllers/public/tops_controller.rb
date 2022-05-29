@@ -3,6 +3,6 @@ class Public::TopsController < ApplicationController
   end
 
   def about
-    @page_title = 'About'
+    @browser_tab_text = 'About'
   end
 end
