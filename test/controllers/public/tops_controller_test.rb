@@ -2,6 +2,10 @@ require "test_helper"
 
 class Public::TopsControllerTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @app_name = 'Dancers'
+  end
+
   # ルートをチェック
   test "should get top" do
     # get public_tops_top_url
@@ -10,7 +14,7 @@ class Public::TopsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     # assert_select：特定のHTMLタグが存在するかチェック
     # assert_select "title：タイトル内の文字列をチェック
-    assert_select "title", "Dancers"
+    assert_select "title", @app_name
   end
 
   # aboutページをチェック
@@ -18,6 +22,7 @@ class Public::TopsControllerTest < ActionDispatch::IntegrationTest
     get about_path
     # 200OKが帰ってくるか。
     assert_response :success
+    # assert_select "title", "About - #{@app_name}"
   end
 
 end
