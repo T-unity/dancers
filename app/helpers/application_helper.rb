@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def page_title
+  def browser_tab_text
     title = 'Dancers'
-    if @page_title
-      title = @page_title + ' - ' + title
+    if @browser_tab_text
+      title = @browser_tab_text + ' - ' + title
     end
-    
+
     title
   end
 end
