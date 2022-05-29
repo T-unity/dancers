@@ -22,7 +22,7 @@ class Public::TopsControllerTest < ActionDispatch::IntegrationTest
     get about_path
     # 200OKが帰ってくるか。
     assert_response :success
-    # assert_select "title", "About - #{@app_name}"
+    assert_select "title", "About - #{@app_name}"
   end
 
 end

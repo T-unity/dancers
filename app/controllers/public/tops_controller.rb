@@ -3,5 +3,6 @@ class Public::TopsController < ApplicationController
   end
 
   def about
+    @page_title = 'About'
   end
 end
