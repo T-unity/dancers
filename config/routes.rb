@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     # get 'tops#about'
   # end
   root 'public/tops#top'
-  # get :about, to: 'public/tops#about'
+  get :about, to: 'public/tops#about'
 
 end
