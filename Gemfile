@@ -66,9 +66,11 @@ group :test do
   # テスト結果の整形ライブラリ
   gem 'minitest-reporters'
   # タスクの自動化。 https://github.com/guard/guard
-  gem 'guard'
+  # https://railstutorial.jp/chapters/static_pages?version=6.0#sec-guard
+  # 今のところコンソールぽちぽちで別に不都合はないので一旦コメントアウトしておく。
+  # gem 'guard'
   # https://github.com/guard/guard-minitest
-  gem 'guard-minitest'
+  # gem 'guard-minitest'
 end
 
 # slimテンプレートを使用
