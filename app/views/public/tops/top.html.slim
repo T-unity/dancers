@@ -1,2 +1,9 @@
 h1 Public::Tops#top
 p Find me in app/views/public/tops/top.html.slim
+
+= "name".split('')
+br
+/ = :name.split('')
+
+- user = { :name => 'hoge', :comment => 'fuga' }
+= user[:name]

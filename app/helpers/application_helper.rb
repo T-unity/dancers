@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # ブラウザタブに表示するテキストを返却する。
   def browser_tab_text(page_title)
     title = 'Dancers'
     # if page_title # 左の条件で判定しようとするとうまくいかない。
