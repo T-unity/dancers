@@ -1,33 +1,17 @@
 h1 Public::Tops#top
 p Find me in app/views/public/tops/top.html.slim
 
-/ = "name".split('')
-/ br
-/ = :name.split('')
+/ - s = 'hoge'
+- s = String.new("hoge") # 明示的にnewをしても良い。
+/ = s.class
 
-- user = { :name => 'hoge', :comment => 'fuga' }
-- user2 = { name: 'piyo', comment: 'puni' } # このコードは上のコードと等価
-/ = user[:name]
-/ = user2[:name]
+- a = (1..10) # 範囲オブジェクト
+/ = a.class # Rangeクラス
 
-/= user
+- r = Range.new(1, 10)
+/ - r = Range.new(1..10) これはエラー
+/ = r
+/ = r.class
 
-- params = {}
-/ = params
-
-/ - params[:user] = { name: 'mario', gender: 'man' }
-/ = params
-/ = params[:user]
-/ = params['user'] # これは何も出力されない
-/ = params[:user][:gender]
-
-- flash = { success: "It worked!", danger: "It failed." }
-- flash.each do |key, val|
-  / = puts "key: #{key} val: #{val}"
-  = "key: #{key} val: #{val}"
-  / = "key: #{key.inspect} val: #{val.inspect}"
-  br
-  / slim（というかerb?）にはputsが不要なのに毎回忘れてしまう。
-
-- ponyo = { "a" => 100, "b" => 200 }.merge({ "b" => 300 })
-= ponyo
+/ aもrもRangeオブジェクト
+= a == r
