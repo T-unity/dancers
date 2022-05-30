@@ -1,9 +1,33 @@
 h1 Public::Tops#top
 p Find me in app/views/public/tops/top.html.slim
 
-= "name".split('')
-br
+/ = "name".split('')
+/ br
 / = :name.split('')
 
 - user = { :name => 'hoge', :comment => 'fuga' }
-= user[:name]
+- user2 = { name: 'piyo', comment: 'puni' } # このコードは上のコードと等価
+/ = user[:name]
+/ = user2[:name]
+
+/= user
+
+- params = {}
+/ = params
+
+/ - params[:user] = { name: 'mario', gender: 'man' }
+/ = params
+/ = params[:user]
+/ = params['user'] # これは何も出力されない
+/ = params[:user][:gender]
+
+- flash = { success: "It worked!", danger: "It failed." }
+- flash.each do |key, val|
+  / = puts "key: #{key} val: #{val}"
+  = "key: #{key} val: #{val}"
+  / = "key: #{key.inspect} val: #{val.inspect}"
+  br
+  / slim（というかerb?）にはputsが不要なのに毎回忘れてしまう。
+
+- ponyo = { "a" => 100, "b" => 200 }.merge({ "b" => 300 })
+= ponyo
