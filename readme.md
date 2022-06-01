@@ -34,7 +34,8 @@ https://github.com/slim-template/slim/blob/master/README.jp.md
 ## gemを追加したい時。
 
   1. 追加したいgemをGemfileに記述する。
-  1. webコンテナに入ってbundle installする。（Dockerfileの中で`bundle install`してるからこれいらないかも。）
+  1. ~~webコンテナに入ってbundle installする。~~
+      （Dockerfileの中で`bundle install`してるからこれいらないかも。→確認したらいらなかった。）
   1. コンテナを再ビルド（`docker-compose build`）
 
 ## Doc
