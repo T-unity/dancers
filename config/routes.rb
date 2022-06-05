@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root 'public/tops#top'
   # 以下2つは同義
   # get '/about', to: 'public/tops#about'
-  get :about, to: 'public/tops#about'
+  get :about, to: 'public/tops#about', as: 'about'
 
 end
