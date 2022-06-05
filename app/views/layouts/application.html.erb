@@ -2,6 +2,7 @@
 <%# このHTMLのBodyのyield部分にslimのHTMLが入る %>
 <!DOCTYPE html>
 <html>
+  <%# IEは対応しない %>
   <head>
     <%# 各ページ毎にページタイトルを取得 %>
     <%# https://railstutorial.jp/chapters/rails_flavored_ruby?version=5.1#code-application_layout_full_title %>
@@ -19,7 +20,7 @@
   <body>
 
     <%# ヘッダー %>
-    <header>
+    <header class='header'>
       <%= render "common/header" %>
     </header>
 
@@ -31,7 +32,7 @@
     </main>
 
     <%# フッター %>
-    <footer>
+    <footer class='footer'>
       <%= render "common/footer" %>
     </footer>
 
