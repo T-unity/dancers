@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'users/new'
+  end
   # namespace :public do
     # get 'tops#about'
   # end
