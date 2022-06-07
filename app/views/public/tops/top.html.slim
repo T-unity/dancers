@@ -4,3 +4,12 @@ h2 新規登録
 = link_to '新規登録', '#'
 br
 = link_to image_tag('admin.jpeg', alt: 'admin icon')
+
+/ - hoge = Public::User.new(name: "Michael Hartl", email: "mhartl@example.com")
+/ = hoge.created_at.class
+
+/ = Public::User.find(1)
+/ = Public::User.all.length
+
+- hoge = Public::User.find(1)
+= hoge
