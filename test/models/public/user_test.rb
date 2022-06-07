@@ -10,4 +10,10 @@ class Public::UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
+  test 'name should be present' do
+    @user.name = '   '
+    # 空白の文字が渡ってきた場合はバリデーションを通過させない
+    assert_not @user.valid?
+  end
+
 end
