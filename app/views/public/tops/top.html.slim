@@ -16,3 +16,5 @@ br
 
 - hoge = Public::User.new(name: "    ", email: "hoge@example.com")
 = hoge.valid?
+/ errorsオブジェクトを使って何に失敗したのかを確認する。
+= hoge.errors.full_messages

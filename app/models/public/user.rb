@@ -5,4 +5,5 @@ class Public::User < ApplicationRecord
   # 以下と同義
   # validates(:name, presence: true)
   # validates(:name, {presence: true} )
+  validates :email, presence: true
 end
