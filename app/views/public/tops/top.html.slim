@@ -14,7 +14,8 @@ br
 / - hoge = Public::User.find(1)
 / = hoge
 
-- hoge = Public::User.new(name: "    ", email: "hoge@example.com")
+/ - hoge = Public::User.new(name: "    ", email: "hoge@example.com")
+- hoge = Public::User.new()
 = hoge.valid?
 / errorsオブジェクトを使って何に失敗したのかを確認する。
 = hoge.errors.full_messages

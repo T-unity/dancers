@@ -10,15 +10,22 @@ class Public::UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
+  # 空白の文字が渡ってきた場合はバリデーションを通過させない
   test 'name should be present' do
     @user.name = '   '
-    # 空白の文字が渡ってきた場合はバリデーションを通過させない
+    assert_not @user.valid?
+  end
+  test 'email should be present' do
+    @user.email = '   '
     assert_not @user.valid?
   end
 
-  test 'email should be present' do
-    @user.email = '   '
-    # 空白の文字が渡ってきた場合はバリデーションを通過させない
+  test 'name should not be too long' do
+    @user.name = 'a' * 51
+    assert_not @user.valid?
+  end
+  test 'email should not be too long' do
+    @user.email = 'a' * 244 + '@example.com'
     assert_not @user.valid?
   end
 
