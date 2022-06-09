@@ -5,5 +5,9 @@ class Public::User < ApplicationRecord
   # 以下と同義
   # validates(:name, presence: true)
   # validates(:name, {presence: true} )
-  validates :email, presence: true, length: { maximum: 255 }
+  # 大文字で始まる文字列はRubyでは定数を示す。
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true,
+            length: { maximum: 255 },
+            format: { with: VALID_EMAIL_REGEX }
 end

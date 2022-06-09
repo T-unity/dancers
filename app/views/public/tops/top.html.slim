@@ -15,7 +15,12 @@ br
 / = hoge
 
 / - hoge = Public::User.new(name: "    ", email: "hoge@example.com")
-- hoge = Public::User.new()
-= hoge.valid?
+/ - hoge = Public::User.new()
+/ - hoge = Public::User.new(name: 'a' * 51, email: 'a' * 244 + '@example.com')
+/ = hoge.valid?
+
 / errorsオブジェクトを使って何に失敗したのかを確認する。
-= hoge.errors.full_messages
+/ = hoge.errors.full_messages
+
+/ - hoge = %w[foo bar baz]
+/ = hoge
