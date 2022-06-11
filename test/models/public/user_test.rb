@@ -30,7 +30,7 @@ class Public::UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  # emailの検証
+  # emailのフォーマットを検証
   test 'email validation should acceput valid address' do
     valid_addresses = %w[
       hoge@example.com
@@ -57,6 +57,14 @@ class Public::UserTest < ActiveSupport::TestCase
       @user.email = invalid_address
       assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
+  end
+
+  # emailの一意性を検証
+  test 'email should be unique' do
+    not_unique_user = @user.dup
+    not_unique_user.email = @user.email.upcase
+    @user.save
+    assert_not not_unique_user.valid?
   end
 
 end
