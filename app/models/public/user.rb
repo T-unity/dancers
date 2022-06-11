@@ -1,4 +1,6 @@
 class Public::User < ApplicationRecord
+  # before_save { self.email = self.email.downcase }
+  before_save { self.email = email.downcase }
   # presence: trueはハッシュ（連想配列）だが、メソッドの最後の引数としてハッシュを渡す場合は波括弧が不要
   # オプションハッシュ
   validates :name, presence: true, length: { maximum: 50 }
