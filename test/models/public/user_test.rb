@@ -66,5 +66,12 @@ class Public::UserTest < ActiveSupport::TestCase
     @user.save
     assert_not not_unique_user.valid?
   end
+  # emailが小文字に変換されているかを検証
+  test 'email should be saved as lower case' do
+    mixed_email = 'HoGe@EXAmple.Com'
+    @user.email = mixed_email
+    @user.save
+    assert_equal mixed_email.downcase, @user.reload.email
+  end
 
 end
