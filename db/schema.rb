@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_06_135627) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_11_032512) do
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.text "content", null: false
     t.datetime "created_at", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_06_135627) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_public_users_on_email", unique: true
   end
 
 end
