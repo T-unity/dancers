@@ -6,8 +6,9 @@ class Public::UserTest < ActiveSupport::TestCase
     @user = Public::User.new(
       name:     'T-unity',
       email:    'tea-uni@example.com',
-      password: 'hogefuga',
-      password_confirmation: 'hogefuga'
+      password: 'hogefuga1234',
+      password_confirmation: 'hogefuga1234'
+      # password_confirmation: 'hoge'
     )
   end
 
@@ -78,5 +79,21 @@ class Public::UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal mixed_email.downcase, @user.reload.email
   end
+
+  # パスワードの文字列が入力されている事をチェック
+  test 'password should be present' do
+    # Multiple Assignment（多重代入）
+    @user.password = @user.password_confirmation = " " * 8
+    assert_not @user.valid?
+  end
+  # パスワードが8文字以上である事をチェック
+  test 'password should habe minimum length' do
+    @user.password = @user.password_confirmation = "a" * 7
+    assert_not @user.valid?
+  end
+
+  # これから追加するテスト
+  # パスワードが半角英数事を含む事をチェック
+  # パスワードの中に空白文字がない事をチェック
 
 end
