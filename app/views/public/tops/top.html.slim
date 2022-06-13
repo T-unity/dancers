@@ -24,3 +24,13 @@ br
 
 / - hoge = %w[foo bar baz]
 / = hoge
+
+- user = Public::User.find_by(email: 'test@example.com')
+/ = user.password_digest
+<br>
+/ = user.authenticate("tekitou_na_password")
+<br>
+/ = user.authenticate("hogefuga1234")
+= user.authenticate("hogefuga1234")
+<br>
+= !! user.authenticate("hogefuga1234")
