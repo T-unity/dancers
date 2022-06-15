@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   # ユーザー登録
   get :signup, to: 'public/users#new',  as: 'signup'
 
+  # ユーザー
+  scope module: :public do
+    resources :users
+  end
+
 end
