@@ -4,5 +4,6 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = Public::User.find(params[:id])
+    debugger
   end
 end
