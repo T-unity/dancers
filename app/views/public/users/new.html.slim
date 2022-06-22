@@ -6,7 +6,25 @@ p フォーム
 = form_with( url: signup_path, local: true ) do |form|
 
   = form.label :name
+  br/
   = form.text_field :name
+
+  br/
+  = form.label :email
+  br/
+  = form.text_field :email
+
+  br/
+  = form.label :password
+  br/
+  = form.text_field :password
+
+  br/
+  = form.label :password_confirmation
+  br/
+  = form.text_field :password_confirmation
+
+  br/
 
   = form.submit
 
