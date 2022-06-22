@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   # ユーザー
   scope module: :public do
-    resources :users
+    resources :users, except: :new
+    # resources :users
   end
+
 
 end

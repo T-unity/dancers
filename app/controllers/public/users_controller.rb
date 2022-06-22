@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
   def new
+    # @user = Public::User.new
   end
 
   def show

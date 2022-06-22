@@ -1,2 +1,16 @@
 h1 signup page
 p This page will be signup page
+
+hr/
+p フォーム
+= form_with( url: signup_path, local: true ) do |form|
+
+  = form.label :name
+  = form.text_field :name
+
+  = form.submit
+
+hr/
+
+
+p 以下はfooter
