@@ -9,7 +9,11 @@ class Public::UsersController < ApplicationController
     if  @user.save
       # 成功
     else
-      exit
+      # exit
+      # redirect_to signup_path
+      # 以下の記述で同一コントローラ内のnewアクションに対応するテンプレートを呼び出す
+      render action: :new
+      # render template: ''
     end
   end
 

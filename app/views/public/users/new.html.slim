@@ -4,6 +4,7 @@ p This page will be signup page
 hr/
 p フォーム
 = form_with( model: @user, url: signup_path, local: true ) do |form|
+  = render 'common/error_messages'
 
   = form.label :name
   br/
