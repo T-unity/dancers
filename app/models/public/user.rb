@@ -16,8 +16,8 @@ class Public::User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX },
             # uniqueness: true
             uniqueness: { case_sensitive: false }
-  # validates :password, presence: true, length: { minimum: 8 }
+  validates :password, presence: true, length: { minimum: 8 }
   # 開発用にパスワードの文字数制限を緩和
-  validates :password, presence: true, length: { minimum: 4 }
+  # validates :password, presence: true, length: { minimum: 4 }
   has_secure_password
 end
