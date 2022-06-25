@@ -8,6 +8,10 @@ class Public::UsersController < ApplicationController
     @user = Public::User.new( user_params )
     if  @user.save
       # 成功
+      flash[:success] = '登録に成功しました'
+      # railsチュートリアルでは以下でもOKという事になっているが、
+      # redirect_to @user
+      redirect_to user_path( @user )
     else
       # exit
       # redirect_to signup_path
