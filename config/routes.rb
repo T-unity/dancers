@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get :about,  to: 'public/tops#about', as: 'about'
 
   # ユーザー登録
-  get :signup, to: 'public/users#new',  as: 'signup'
+  get  :signup, to: 'public/users#new',  as: 'signup'
   post :signup, to: 'public/users#create'
 
   # ユーザー
