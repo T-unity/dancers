@@ -33,6 +33,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'public/users/show'
+    # フラッシュが表示される（空ではない事）を確認
+    assert flash.any?
   end
 
 end
