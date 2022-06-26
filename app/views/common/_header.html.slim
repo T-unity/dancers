@@ -1,8 +1,8 @@
 div.head_wrap
+  h2.head_title some App
   nav.gNav
-    div.head_inner
-      ul
-        li = link_to 'TOP', '/'
-        li = link_to '新規登録', signup_path
-        li = link_to '投稿一覧', '#'
-        li = link_to '投稿の新規作成', '#'
+    ul
+      li.head_list = link_to 'TOP', '/'
+      li.head_list = link_to '新規登録', signup_path
+      li.head_list = link_to '投稿一覧', '#'
+      li.head_list = link_to '投稿の新規作成', '#'
