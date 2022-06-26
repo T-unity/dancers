@@ -14,13 +14,31 @@
  *= require_self
  */
 
+// ボディ
+body {
+  background-color: rgb(240, 240, 240);
+}
+
 // 共通ヘッダー
 .head_wrap {
-  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(250, 250, 250);
 
-  li {
-    list-style: none;
+  .gNav {
+    position: fixed;
+    justify-content: flex-end;
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+      // display: inline-block;
+    }
   }
+  
 }
 
 // 共通フッター
