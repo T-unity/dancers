@@ -21,4 +21,18 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'public/users/new'
   end
 
+  test 'valid signup' do
+    get signup_path
+    assert_difference 'Public::User.count' do
+      post signup_path, params: { public_user: {
+        name: 'Yusuke Tanimoto',
+        email: 'yusuketanimoto@example.com',
+        password: 'tyusuke8012',
+        password_confirmation: 'tyusuke8012'
+      } }
+    end
+    follow_redirect!
+    assert_template 'public/users/show'
+  end
+
 end
