@@ -3,6 +3,11 @@ div.head_wrap
   nav.gNav
     ul
       li.head_list = link_to 'TOP', '/'
-      li.head_list = link_to '新規登録', signup_path
       li.head_list = link_to '投稿一覧', '#'
-      li.head_list = link_to '投稿の新規作成', '#'
+      / ログインしている場合に表示
+      / li.head_list = link_to 'マイページ', current_user
+      - if logged_in?
+        li.head_list = link_to 'マイページ', user_path( current_user )
+        li.head_list = link_to 'ログアウト', logout_path, method: :delete
+      - else
+        li.head_list = link_to 'ログイン', login_path
