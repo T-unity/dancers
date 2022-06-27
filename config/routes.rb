@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'public/tops#top'
   # 以下2つは同義
   # get '/about', to: 'public/tops#about'
-  get :about,  to: 'public/tops#about', as: 'about'
+  get :about, to: 'public/tops#about', as: 'about'
 
   # ユーザー登録
   get  :signup, to: 'public/users#new',  as: 'signup'
@@ -21,5 +21,9 @@ Rails.application.routes.draw do
     # resources :users
   end
 
+  # セッション管理
+  get :login, to: 'sessions#new'
+  post :login, to: 'sessions#create'
+  delete :logout, to: 'sessions#destrry'
 
 end
