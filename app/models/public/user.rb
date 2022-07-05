@@ -20,4 +20,11 @@ class Public::User < ApplicationRecord
   # 開発用にパスワードの文字数制限を緩和
   # validates :password, presence: true, length: { minimum: 4 }
   has_secure_password
+
+  # def Public::User.digest( string )
+  def User.digest( string )
+    cost = ActiveModel::has_secure_password.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
 end
