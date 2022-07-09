@@ -1,9 +1,15 @@
-h1 Welcome to some App!!
+div.top__mainVisual
 
-h2 新規登録
-= link_to '新規登録', signup_path 
-br
-= link_to image_tag('admin.jpeg', alt: 'admin icon')
+h2 news
+
+p ここに最新の話題を最大で5件程度掲載する
+
+h2 新着の求人
+/ = link_to '新規登録', signup_path
+p ここに新着の求人をYouTubeのカードみたいな形式で記載する
+
+/ br
+/ = link_to image_tag('admin.jpeg', alt: 'admin icon')
 
 / - hoge = Public::User.new(name: "Michael Hartl", email: "mhartl@example.com")
 / = hoge.created_at.class
