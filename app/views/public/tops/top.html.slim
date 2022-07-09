@@ -1,42 +1,7 @@
 div.top__mainVisual
 
 h2 news
-
 p ここに最新の話題を最大で5件程度掲載する
 
 h2 新着の求人
-/ = link_to '新規登録', signup_path
 p ここに新着の求人をYouTubeのカードみたいな形式で記載する
-
-/ br
-/ = link_to image_tag('admin.jpeg', alt: 'admin icon')
-
-/ - hoge = Public::User.new(name: "Michael Hartl", email: "mhartl@example.com")
-/ = hoge.created_at.class
-
-/ = Public::User.find(1)
-/ = Public::User.all.length
-
-/ - hoge = Public::User.find(1)
-/ = hoge
-
-/ - hoge = Public::User.new(name: "    ", email: "hoge@example.com")
-/ - hoge = Public::User.new()
-/ - hoge = Public::User.new(name: 'a' * 51, email: 'a' * 244 + '@example.com')
-/ = hoge.valid?
-
-/ errorsオブジェクトを使って何に失敗したのかを確認する。
-/ = hoge.errors.full_messages
-
-/ - hoge = %w[foo bar baz]
-/ = hoge
-
-/ - user = Public::User.find_by(email: 'test@example.com')
-/ / = user.password_digest
-/ <br>
-/ / = user.authenticate("tekitou_na_password")
-/ <br>
-/ / = user.authenticate("hogefuga1234")
-/ = user.authenticate("hogefuga1234")
-/ <br>
-/ = !! user.authenticate("hogefuga1234")
