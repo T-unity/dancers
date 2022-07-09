@@ -2,16 +2,13 @@ h1 Login
 
 = form_with(url: login_path) do |form|
 
-  br/
   = form.label :email
   = form.email_field :email
 
-  br/
   = form.label :password
   = form.password_field :password
 
-  br/
   = form.submit
 
 p ユーザー登録がまだですか？
-= link_to 'signup', signup_path
+div.btn = link_to 'signup', signup_path

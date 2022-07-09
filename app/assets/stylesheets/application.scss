@@ -74,3 +74,42 @@ header {
 main {
   padding-top: 100px;
 }
+
+// フォーム
+// .form__text-single {
+//   margin-top: 3%;
+//   width: 100%;
+//   padding: 10px 15px;
+//   border-radius: 3px;
+//   border: 2px solid #ddd;
+//   font-size: 14px;
+// }
+input[type='email'], input[type='password'] {
+  margin-top: 1%;
+  width: 95%;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 2px solid #ddd;
+  font-size: 14px;
+}
+
+// サブミットボタン
+input[type='submit'] {
+  margin-top: 3%;
+  // margin-left: auto;
+  // margin-right: auto;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(105, 162, 255, .8);
+  border-radius: 5px;
+  border: none;
+  padding: 15px 30px;
+  width: 180px;
+  height: 55px;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn {
+  text-align: center;
+}
