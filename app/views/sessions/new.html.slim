@@ -8,7 +8,8 @@ h1 Login
   = form.label :password
   = form.password_field :password
 
-  = form.submit
+  div.submit__wrap
+    = form.submit 'Login'
 
 p ユーザー登録がまだですか？
 div.btn = link_to 'signup', signup_path

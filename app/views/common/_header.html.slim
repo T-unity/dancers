@@ -1,10 +1,8 @@
 div.head_wrap
-  h2.head_title Dancers
+  h2.head_title = link_to 'Dancers', '/'
   span.head_title-small BETA
   nav.gNav
     ul
-      li.head_list = link_to 'TOP', '/'
-      li.head_list = link_to '投稿一覧', '#'
       / 自作のlogged_inメソッドで判定
       - if logged_in?
         li.head_list = link_to 'マイページ', user_path( current_user )
