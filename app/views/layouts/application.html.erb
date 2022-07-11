@@ -27,9 +27,17 @@
     <%# メインの出力 %>
     <main>
       <div class='container'>
+        <%# フラッシュメッセージ %>
         <% flash.each do |key, message| %>
-          <div><%= key %><%= message %></div>
+          <% if key == 'danger' %>
+            <div class="flash__danger">
+          <% else %>
+            <div>
+          <% end %>
+              <%= message %>
+            </div>
         <% end %>
+        <%# コンテンツ本体 %>
         <%= yield %>
       </div>
     </main>
