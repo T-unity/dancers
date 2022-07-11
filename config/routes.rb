@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   # セッション管理
   get    :login,  to: 'sessions#new'
   post   :login,  to: 'sessions#create'
-  delete :logout, to: 'sessions#destrry'
+  delete :logout, to: 'sessions#destroy'
 
 end

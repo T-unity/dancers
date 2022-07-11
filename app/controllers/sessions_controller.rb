@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
   def create
 
     # user = Public::User.find_by( email: params[:session][:email].downcase )
+    # ORMを使用して、DB内にメールアドレスが一致するユーザーがいるかを走査
     user = Public::User.find_by( email: params[:email].downcase )
-    # ユーザーの存在チェック、且つパスワードの生合成をチェック
+    # ユーザーの存在チェック、且つパスワードの整合性をチェック
     # if user && user.authenticate( params[:session][:password] )
     if user && user.authenticate( params[:password] )
       # 認可に成功
@@ -18,7 +19,8 @@ class SessionsController < ApplicationController
       redirect_to user_path( user )
     else
       # flash[:danger] = 'メールアドレス、もしくはパスワードが正しくないようです。'
-      flash.now[:danger] = 'メールアドレス、もしくはパスワードが正しくないようです。'
+      # flash.nowは、リクエストが発生したタイミングで消失する。
+      flash.now[:danger] = 'メールアドレス、もしくはパスワードが正しくないようです。再度入力をお試しください。'
       render 'new'
     end
 
