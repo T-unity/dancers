@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     # user = Public::User.find_by( email: params[:session][:email].downcase )
     # ORMを使用して、DB内にメールアドレスが一致するユーザーがいるかを走査
     user = Public::User.find_by( email: params[:email].downcase )
@@ -23,7 +22,6 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'メールアドレス、もしくはパスワードが正しくないようです。再度入力をお試しください。'
       render 'new'
     end
-
   end
 
   def destroy
