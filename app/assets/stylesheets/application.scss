@@ -102,15 +102,36 @@ input[type='submit'] {
   background-color: rgba(105, 162, 255, .8);
   border-radius: 5px;
   border: none;
-  padding: 1% 2%;
+  // padding: 1% 2%;
   width: 140px;
   height: 40px;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  &:hover {
+    background-color: rgba(137, 173, 231, 0.8);
+  }
 }
 
 // ボタン（仮組み。要修正）
-.btn {
+.btn__primary {
   text-align: center;
+  // margin-top: 3%;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(105, 162, 255, .8);
+  border-radius: 5px;
+  border: none;
+  padding: 5px 0%;
+  width: 140px;
+  // height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(137, 173, 231, 0.8);
+  }
+  a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+  }
 }
