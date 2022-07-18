@@ -13,3 +13,9 @@ div.head_wrap
         li.head_list = button_to 'ログアウト', logout_path, method: :delete
       - else
         li.head_list = link_to 'ログイン', login_path
+
+/ 永続セッションに使用するトークンの生成を確認
+/ - hoge = Public::User.new(name: "Maki", email: "cf930289vr@example.com")
+/ = hoge.generate_token
+/ = hoge.remember_digest
+/ = hoge.set_remember_token
