@@ -13,8 +13,6 @@ class Public::User < ApplicationRecord
   # validates(:name, presence: true)
   # validates(:name, {presence: true} )
 
-  # 大文字で始まる文字列はRubyでは定数を示す。
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true,
             length: { maximum: 255 },
@@ -26,8 +24,6 @@ class Public::User < ApplicationRecord
   # validates :password, presence: true, length: { minimum: 4 }
   has_secure_password
 
-  # def Public::User.digest( string )
-  # def User.digest( string )
   def digest( string )
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
