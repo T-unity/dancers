@@ -43,4 +43,12 @@ class Public::User < ApplicationRecord
     update_attribute(:remember_digest, digest(remember_token))
   end
 
+  def remove_remember_token
+    update_attribute(:remember_digest, nil)
+  end
+
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
 end

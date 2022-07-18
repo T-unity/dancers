@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       # ログイン処理を記述
       # ログインに成功した事でflashで明示して、ユーザーの詳細ページにリダイレクト
       log_in user
+      remember user
       # redirect_to user
       redirect_to user_path( user )
     else
