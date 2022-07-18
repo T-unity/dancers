@@ -48,6 +48,9 @@ class Public::User < ApplicationRecord
   end
 
   def authenticated?(remember_token)
+    # レアケースだが、複数ブラウザを跨いだ走査でremember_digestがnullになる場合があるため制御を追加
+    # https://railstutorial.jp/chapters/advanced_login?version=5.1#sec-two_subtle_bugs
+    return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
