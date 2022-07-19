@@ -72,6 +72,9 @@ group :test do
   # gem 'guard'
   # https://github.com/guard/guard-minitest
   # gem 'guard-minitest'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 # slimテンプレートを使用
