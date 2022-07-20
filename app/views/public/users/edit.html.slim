@@ -1,17 +1,12 @@
 h1 マイページ
-= @user.inspect
 
-p フォーム
-= form_with( model: @user, url: edit_user_path, local: true ) do |form|
+= form_with( model: @user, url: user_path, local: true ) do |form|
   = render 'common/error_messages'
 
   = form.label :name
-  br/
   = form.text_field :name
 
-  br/
   = form.label :email
-  br/
   = form.email_field :email
 
   = form.submit
