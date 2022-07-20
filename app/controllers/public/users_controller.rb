@@ -4,27 +4,33 @@ class Public::UsersController < ApplicationController
   end
 
   def create
-    # @user = Public::User.new( params[:user] )
     @user = Public::User.new( user_params )
     if  @user.save
-      # 成功
       log_in @user
       flash[:success] = '登録に成功しました'
-      # railsチュートリアルでは以下でもOKという事になっているが、
-      # redirect_to @user
       redirect_to user_path( @user )
     else
-      # exit
-      # redirect_to signup_path
-      # 以下の記述で同一コントローラ内のnewアクションに対応するテンプレートを呼び出す
       render action: :new
-      # render template: ''
     end
   end
 
   def show
     @user = Public::User.find(params[:id])
-    # debugger
+  end
+
+  def edit
+    @user = Public::User.find(params[:id])
+  end
+
+  def update
+    @user = Public::User.find(params[:id])
+    # バリデーションを無視して直接カラムを更新しているので要検討
+    if @user.update_columns(name: user_update_params['name']) && @user.update_columns(email: user_update_params['email'])
+      flash[:success] = '登録情報を更新しました'
+      redirect_to user_path( @user )
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -38,6 +44,13 @@ class Public::UsersController < ApplicationController
         :email,
         :password,
         :password_confirmation,
+      )
+    end
+
+    def user_update_params
+      params.require(:public_user).permit(
+        :name,
+        :email,
       )
     end
 

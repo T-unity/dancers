@@ -1,20 +1,7 @@
 
-= @user.name
-br/
-= @user.email
+= @user.inspect
 
-br/
-p パラメータ
-= params
-
-br/
 = gravator_for @user
-br/
-
-- email = 'HOGe@exaMPLE.Com'
-p
-br/
-= Digest::MD5::hexdigest(email.downcase)
 
 p ここまでyield
 hr/

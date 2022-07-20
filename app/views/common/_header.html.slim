@@ -3,22 +3,13 @@ div.head_wrap
   span.head_title-small BETA
   nav.gNav
     ul
-      / 自作のlogged_inメソッドで判定
       - if logged_in?
         li.head_list = link_to 'マイページ', user_path( current_user )
+        li.head_list = link_to '編集', edit_user_path
+        li.head_list = button_to 'ログアウト', logout_path, method: :delete
         / link_toだと動かないが、button_toだとなぜか動く。おそらく以下が同様の事例
         / https://teratail.com/questions/268094
         / https://www.google.com/search?q=method%3A+%3Adelete+%E5%8A%B9%E3%81%8B%E3%81%AA%E3%81%84&rlz=1C5CHFA_enJP911JP911&oq=method%3A+%3Adelete+%E5%8A%B9%E3%81%8B%E3%81%AA%E3%81%84&aqs=chrome..69i57j69i58.6132j0j7&sourceid=chrome&ie=UTF-8
         / li.head_list = link_to 'ログアウト', logout_path, method: :delete
-        li.head_list = button_to 'ログアウト', logout_path, method: :delete
       - else
         li.head_list = link_to 'ログイン', login_path
-
-/ 永続セッションに使用するトークンの生成を確認
-/ - hoge = Public::User.new(name: "Maki", email: "cf930289vr@example.com")
-/ = hoge.generate_token
-/ = hoge.remember_digest
-/ = hoge.set_remember_token
-
-/ = cookies.signed.inspect
-/ = cookies.permanent.signed.inspect

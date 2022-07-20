@@ -1,0 +1,12 @@
+h1 マイページ
+
+= form_with( model: @user, url: user_path, local: true ) do |form|
+  = render 'common/error_messages'
+
+  = form.label :name
+  = form.text_field :name
+
+  = form.label :email
+  = form.email_field :email
+
+  = form.submit
