@@ -1,0 +1,8 @@
+h1 ユーザー一覧
+
+- @user.each do |user|
+  div.user_index
+    div.user_index_name
+      = user.name
+    div.user_index_email
+      = user.email

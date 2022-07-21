@@ -14,6 +14,10 @@ class Public::UsersController < ApplicationController
     end
   end
 
+  def index
+    @user = Public::User.all()
+  end
+
   def show
     @user = Public::User.find(params[:id])
   end

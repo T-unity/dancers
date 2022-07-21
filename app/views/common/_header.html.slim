@@ -5,7 +5,7 @@ div.head_wrap
     ul
       - if logged_in?
         li.head_list = link_to 'マイページ', user_path( current_user )
-        li.head_list = link_to '編集', edit_user_path
+        / li.head_list = link_to '編集', edit_user_path
         li.head_list = button_to 'ログアウト', logout_path, method: :delete
         / link_toだと動かないが、button_toだとなぜか動く。おそらく以下が同様の事例
         / https://teratail.com/questions/268094

@@ -1,8 +1,5 @@
-<%# このerbがデフォルトテンプレート %>
-<%# このHTMLのBodyのyield部分にslimのHTMLが入る %>
 <!DOCTYPE html>
 <html>
-  <%# IEは対応しない %>
   <head>
     <%# 各ページ毎にページタイトルを取得 %>
     <%# https://railstutorial.jp/chapters/rails_flavored_ruby?version=5.1#code-application_layout_full_title %>
@@ -16,14 +13,11 @@
     <%# スタイルシートの取得 %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-
   <body>
-
     <%# ヘッダー %>
     <header>
       <%= render "common/header" %>
     </header>
-
     <%# メインの出力 %>
     <main>
       <div class='container'>
@@ -41,14 +35,9 @@
         <%= yield %>
       </div>
     </main>
-
     <%# フッター %>
     <footer class='footer'>
       <%= render "common/footer" %>
     </footer>
-
-    <p>application.erb パラメータ</p>
-    <%= debug(params) if Rails.env.development? %>
-
   </body>
 </html>
