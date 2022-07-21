@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get  :signup, to: 'public/users#new',  as: 'signup'
   post :signup, to: 'public/users#create'
 
-  # ユーザー
   scope module: :public do
+    # ユーザー
     resources :users, except: [:new, :create]
   end
 
